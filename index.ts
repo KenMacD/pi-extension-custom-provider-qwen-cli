@@ -167,12 +167,16 @@ async function pollForToken(
 			code_verifier: verifier,
 		});
 
+		const headers: Record<string, string> = {
+			"Content-Type": "application/x-www-form-urlencoded",
+			Accept: "application/json",
+		};
+		const requestId = globalThis.crypto?.randomUUID?.();
+		if (requestId) headers["x-request-id"] = requestId;
+
 		const response = await fetch(QWEN_TOKEN_ENDPOINT, {
 			method: "POST",
-			headers: {
-				"Content-Type": "application/x-www-form-urlencoded",
-				Accept: "application/json",
-			},
+			headers,
 			body: body.toString(),
 		});
 
