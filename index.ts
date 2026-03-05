@@ -24,9 +24,7 @@ const QWEN_GRANT_TYPE = "urn:ietf:params:oauth:grant-type:device_code";
 const QWEN_DEFAULT_BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1";
 const QWEN_POLL_INTERVAL_MS = 2000;
 
-// Build User-Agent string similar to the main qwen-code project
-const QWEN_VERSION = "0.11.1"; // Match the main project version
-const USER_AGENT = `QwenCode/${QWEN_VERSION} (${process.platform}; ${process.arch})`;
+const USER_AGENT = `Pi/2026-03-05`;
 
 // =============================================================================
 // PKCE Helpers
